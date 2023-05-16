@@ -1,0 +1,1 @@
+//modulo[horasSemanales >= 3]/horasSemanales/text()
