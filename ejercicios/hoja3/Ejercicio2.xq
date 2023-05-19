@@ -1,0 +1,2 @@
+(://modulo[nombre = "Lenguajes de marcas y sistemas de gestión de información"]/ciclo:)
+//ciclo[@id = //modulo[nombre = "Lenguajes de marcas y sistemas de gestión de información"]/ciclo ]/nombre/text()
