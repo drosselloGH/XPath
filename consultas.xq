@@ -89,3 +89,41 @@ return <pasajero><nombre>{data($x/pasajero/nombre)}</nombre><origen>{data($x/ori
 where $x/origen = "París" or $x/origen = "Valencia"
 order by $x/origen
 return <pasajero><nombre>{data($x/pasajero/nombre)}</nombre><origen>{data($x/origen)}</origen></pasajero>:)
+
+
+(:----- HOJA 4 -----:)
+
+
+(:Ejer 1:)
+(:for $x in doc("Actividad3 XQuery.xml")//reserva
+where $x/precio/@moneda = "euro"
+return $x/localizador:)
+
+(:Ejer 2:)
+for $x in doc("Actividad3 XQuery.xml")//reserva
+where $x/precio/@moneda = "euro"
+return <localizador>{$x/precio/@moneda}{data($x/localizador)}</localizador>
+
+(:Ejer 7:)
+(:let $x := doc("Actividad3 XQuery.xml")//reserva/precio
+  se genera como un arrayList de reservas
+return count($x):)
+
+(:Ejer 8:)
+(:let $x := doc("Actividad3 XQuery.xml")//reserva/precio
+return max($x) and min($x)
+<body>
+<h1>Vuelo mas caro y mas barato</h1>
+{
+let $x := doc("Actividad3 XQuery.xml")//reserva/precio
+return <p>El vuelo mas casro cuesta (max($x))€, y el mas barato, (min($x))€</p>}
+</body>:)
+
+(:Ejer 9:)
+(:for $x in distinct-values(doc("Actividad3 XQuery.xml")//reserva/origen)
+order by $x
+return $x:)
+
+(:Ejer 10:)
+(:let $x := doc("Actividad3 XQuery.xml")//reserva/precio
+return sum($x):)
